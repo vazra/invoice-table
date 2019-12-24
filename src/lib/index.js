@@ -130,7 +130,7 @@ export default function InvoiceTable({
 
   // FUNCTION: add new item to the itemlist
   const handleAddItem = () => {
-    console.log('inside fun -- handleAddItem');
+    console.log('inside -- handleAddItem');
 
     // check if all required fields are filled
     const isInvalid = (col) => !(col.field in newRow);
@@ -142,6 +142,27 @@ export default function InvoiceTable({
       );
     } else {
       console.log("validated successfully");
+      if(newRow.c < 1){
+        alert(
+          `quantity should be more than 1`
+        );
+        return
+      }
+      // if the item quantiry specified is not availabe in the inventry. 
+      if(newRow.qty < 1){
+        alert(
+          `The selected item is out of stock, please update the stock.`
+        );
+        return
+      }
+      // if the item quantiry specified is not availabe in the inventry. 
+      if(newRow.c > newRow.qty){
+        alert(
+          `Only ${newRow.qty} items availabe in stock. You tried to add ${newRow.c} items`
+        );
+        return
+      }
+
       setTableData([...tableData, newRow]);
       setNewRow(defaultObj);
       console.log('searchFieldRef', searchFieldRef);

@@ -35,7 +35,7 @@ const App =()=> {
     ];
 
     const theItemList = [
-        {pn:'213',nm:'Name 1', rs: 12, qty: 10, disc:10, tax: 'jgfHLmfQWFlpUbL6IJT0'}
+        // {pn:'213',nm:'Name 1', rs: 12, qty: 10, disc:10, tax: 'jgfHLmfQWFlpUbL6IJT0'}
     ]
     const [items, setItems] = React.useState(theItemList);
     const [searchResults, setSearchResults] = React.useState([1, 2, 3, 4, 5]);
@@ -44,14 +44,15 @@ const App =()=> {
         { title: 'Part Name', field: 'nm',editable: true,  required: true },
         { title: 'Unit Price', field: 'rs',editable: true,  default: 0, required: true },
         { title: 'Tax Group', field: 'tax', editable: true, type: 'select', options: taxSlabList, optionId: 'gid', required: true },
-        { title: 'Quantity', field: 'qty', editable: true, default: 1, style: { width: '56px' }, type: 'number', required: true },
+        { title: 'Quantity', field: 'c', editable: true, default: 1, style: { width: '56px' }, type: 'number', required: true },
         { title: 'Disc', field: 'disc', editable: true, default: 0 , style: { width: '56px' }, type: 'number', suffix: '%' },
-        { title: 'Price', field: 'price', type: 'numeric', calc: 'roundTo(rs*qty*(1-(.01*disc)),2)' },
+        { title: 'Price', field: 'price', type: 'numeric', calc: 'roundTo(rs*c*(1-(.01*disc)),2)' },
       ];
     
     function handleSearch(value) {
-        console.log("value is ",value);
+        // console.log("value is ",value);
         const resList = theDummyPartsList.filter((aPart) => aPart.pn.includes(value));
+        // console.log("resList is ",resList);
         setSearchResults(resList)
     }    
 
