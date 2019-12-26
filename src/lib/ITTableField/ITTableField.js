@@ -56,7 +56,7 @@ export default function ITTableField({
         ref={column.field === SEARCH_COLUMN ? searchFieldRef : null}
         name={column.field}
         // defaultValue={0}
-        value={newRow[column.field] ? newRow[column.field] : ''}
+        value={newRow[column.field] !== undefined ? newRow[column.field] : ''}
         onChange={handleFieldChange}
         onKeyDown={handleKeyPress}
         endAdornment={column.suffix}

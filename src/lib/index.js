@@ -1,28 +1,29 @@
-/* eslint-disable no-nested-ternary */
-import React, { useRef } from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
-  Paper,
-  Table,
-  TableCell as TCell,
-  TableHead,
+  Fade,
+  IconButton,
   List,
   ListItem,
   ListItemText,
-  TableRow,
-  TableBody,
-  IconButton,
-  Popper,
-  Fade,
-  Select,
   MenuItem,
+  Paper,
+  Popper,
+  Select,
+  TableCell as TCell,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
 } from '@material-ui/core';
+/* eslint-disable no-nested-ternary */
+import React, { useRef } from 'react';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+
 import DeleteIcon from '@material-ui/icons/Delete';
 import DoneIcon from '@material-ui/icons/Done';
+import ITTableField from './ITTableField/ITTableField';
 import { Parser } from 'expr-eval';
 import PropTypes from 'prop-types';
 import grey from '@material-ui/core/colors/grey';
-import ITTableField from './ITTableField/ITTableField';
 
 // TODO : Confirm if there's a chance to get this numbers changed when keyboard is changed.
 const KEY_CODE_RETURN = 13;
@@ -329,14 +330,15 @@ export default function InvoiceTable({
                       column.suffix ? column.suffix : ''
                     }`
                   ) : !column.calc ? (
-                    `${newRow[column.field] ? newRow[column.field] : ''}${
+                    `${' '}${newRow[column.field] ? newRow[column.field] : ''}${
                       column.suffix ? column.suffix : ''
                     }`
                   ) : (
-                    `${' '} ${Parser.evaluate(column.calc, newRow)}${
+                    ` ${Parser.evaluate(column.calc, newRow)}${
                       column.suffix ? column.suffix : ''
                     }`
                   )}
+                  {/* TODO : In the above row, while editable and not in calc, an initial padding is requited, but not reflecting when a space is manually added */}
                 </TableCell>
               ))}
               <TableCell align="right">
