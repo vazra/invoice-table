@@ -1,6 +1,6 @@
 {
   "name": "invoice-table",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -9,21 +9,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vazra/invoice-table.git"
+    "url": "git+https://github.com/vazra/invoice-table.git"
   },
   "author": "vazra",
-  "keyword": "table,invoice",
   "dependencies": {
-    "@material-ui/core": "^4.7.0",
+    "expr-eval": "^2.0.2"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.8.1",
     "@material-ui/icons": "^4.5.1",
-    "babel-cli": "^6.26.0",
-    "expr-eval": "^2.0.2",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,5 +46,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "> A React component , a data table, to be used in CRMs,Billing Apps, etc., lists items in the invoice or billing page/UI. This repo is created with ref from https://dev.to/arpitjain_in/create-library-of-react-component-1fa8 , no additional serup have been done..",
+  "bugs": {
+    "url": "https://github.com/vazra/invoice-table/issues"
+  },
+  "homepage": "https://github.com/vazra/invoice-table#readme",
+  "keywords": [
+    "invoice",
+    "table",
+    "react"
+  ],
+  "license": "MIT"
 }

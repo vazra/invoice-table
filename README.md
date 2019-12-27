@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save invoice-table
+npm i invoice-table
 ```
 
 ## Usage
