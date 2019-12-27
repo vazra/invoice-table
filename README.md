@@ -14,17 +14,19 @@ npm i invoice-table
 
 ```tsx
 import * as React from 'react'
-
-import MyComponent from 'invoice-table'
+import InvoiceTable from 'invoice-table'
 
 class Example extends React.Component {
   render () {
     return (
-      <MyComponent />
+      <InvoiceTable />
     )
   }
 }
 ```
+
+### Notes for Development 
+1. install peer dependencies manually. 
 
 ## License
 
