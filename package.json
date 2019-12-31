@@ -1,6 +1,7 @@
 {
   "name": "invoice-table",
-  "version": "0.1.2",
+  "version": "0.1.3",
+  "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -9,62 +10,34 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vazra/invoice-table.git"
-  },
-  "author": "vazra",
-  "peerDependencies": {
-    "expr-eval": "2.x",
-    "material-ui/core": "4.x",
-    "material-ui/icons": "4.x",
-    "react": "16.x",
-    "react-dom": "16.x"
-  },
-  "devDependencies": {
-    "expr-eval": "^2.0.2",
-    "@material-ui/core": "^4.8.1",
-    "@material-ui/icons": "^4.5.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^9.1.0",
-    "prop-types": "^15.7.2",
-    "react-scripts": "^3.3.0",
-    "react-styleguidist": "^10.3.2"
+    "url": "https://github.com/vazra/invoice-table.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build1": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
-    "build": "rm -rf dist && NODE_ENV=production react-scripts build && mv build dist",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sg": "styleguidist server",
-    "sg:build": "styleguidist build",
-    "bv": "babel --version"
+    "start": "styleguidist server",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --ignore src/lib/test.js,src/lib/**/*.stories.js,src/lib/**/*.test.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [],
+  "author": "vazra",
+  "license": "MIT",
+  "peerDependencies": {
+    "@material-ui/core": "4.x",
+    "@material-ui/icons": "4.x",
+    "react": "16.x",
+    "react-dom": "16.x",
+    "expr-eval": "2.0.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "> A React component , a data table, to be used in CRMs,Billing Apps, etc., lists items in the invoice or billing page/UI. This repo is created with ref from https://dev.to/arpitjain_in/create-library-of-react-component-1fa8 , no additional serup have been done..",
-  "bugs": {
-    "url": "https://github.com/vazra/invoice-table/issues"
-  },
-  "homepage": "https://github.com/vazra/invoice-table#readme",
-  "keywords": [
-    "invoice",
-    "table",
-    "react"
-  ],
-  "license": "MIT"
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1",
+    "babel-loader": "^8.0.6",
+    "expr-eval": "^2.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-styleguidist": "^10.3.2",
+    "webpack": "^4.41.5"
+  }
 }

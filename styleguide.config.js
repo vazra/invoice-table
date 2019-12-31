@@ -4,4 +4,5 @@ module.exports = {
   defaultExample: true,
   usageMode: "expand",
   showSidebar: false
+  //   components: "src/components/**/*.js"
 };
